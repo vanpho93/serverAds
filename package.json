@@ -1,0 +1,24 @@
+{
+  "name": "ads",
+  "version": "1.0.0",
+  "description": "Node.js Socket.io server ads realtime",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanpho93/serverAds.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vanpho93/serverAds/issues"
+  },
+  "homepage": "https://github.com/vanpho93/serverAds#readme",
+  "dependencies": {
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "socket.io": "^1.5.1"
+  }
+}
