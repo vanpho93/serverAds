@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
-server.listen(process.env.PORT);
+server.listen(process.env.PORT || 3000);
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
@@ -29,6 +29,14 @@ app.get('/admin', function(req, res) {
 
 app.get('/', function(req, res) {
   res.render('homepage', {ads: mang});
+});
+
+var queryDB = require('./db.js');
+
+app.get('/db', function(req, res){
+  queryDB('SELECT * FROM "Admin"', function(result){
+    console.log(result.rows);
+  });
 });
 
 function Ad(name, image, link) {
