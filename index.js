@@ -37,19 +37,13 @@ app.get('/', function(req, res) {
 var queryDB = require('./db.js');
 
 app.get('/db', function(req, res){
-  pool.connect(uri, function(err, client, done){
-    if(err){
-      res.send('Loi ket noi')
-    }else{
-        client.query('SELECT * FROM "Admin"', function(err, result){
-          if(err){
-            res.send('LOI TRUY VAN');
-          }else{
-            res.send(result.rows);
-          }
-        });
-    }
-  })
+  pg.connect(uri, function(err, client, done) {
+     client.query('SELECT * FROM Admin', function(err, result) {
+        done();
+        if(err) return console.error(err);
+        console.log(result.rows);
+     });
+  });
 });
 
 function Ad(name, image, link) {
