@@ -2,20 +2,24 @@ var express = require('express');
 var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
-server.listen(3000);
+server.listen(3000 || process.env.PORT);
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
 app.use(express.static('public'));
 
+var currentAd;
 
 io.on('connection', function(socket) {
     console.log('New user connect!');
+
+    socket.emit('SERVER_CHANGE_AD', currentAd);
+
     socket.on('ADMIN_SEND_NEW_AD', function(data){
-      var ad = mang.find(function(element){
+      currentAd = mang.find(function(element){
         return data == element.image
       });
-      io.emit('SERVER_CHANGE_AD', ad);
+      io.emit('SERVER_CHANGE_AD', currentAd);
     });
 });
 
