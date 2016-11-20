@@ -1,3 +1,6 @@
+var pg = require('pg');
+var uri = 'postgres://qfevzvzqamispj:NYoqaErLCLr84qEkf1v6MWDVAw@ec2-54-243-207-190.compute-1.amazonaws.com:5432/d16s2mb3c9o60u'
+var pool = new pg.Pool();
 var express = require('express');
 var app = express();
 var server = require('http').Server(app);
@@ -34,9 +37,19 @@ app.get('/', function(req, res) {
 var queryDB = require('./db.js');
 
 app.get('/db', function(req, res){
-  queryDB('SELECT * FROM "Admin"', function(result){
-    console.log(result.rows);
-  });
+  pool.connect(uri, function(err, client, done){
+    if(err){
+      res.send('Loi ket noi')
+    }else{
+        client.query('SELECT * FROM "Admin"', function(err, result){
+          if(err){
+            res.send('LOI TRUY VAN');
+          }else{
+            res.send(result.rows);
+          }
+        });
+    }
+  })
 });
 
 function Ad(name, image, link) {
