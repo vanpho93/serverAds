@@ -2,17 +2,14 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Server ads</title>
+    <title>Tin tuc</title>
     <script src="socket.io/socket.io.js"></script>
     <script src="jquery-3.1.1.min.js"></script>
     <script type="text/javascript">
       var socket = io();
-      $(document).ready(function(){
-        $('#sl-quang-cao').on('change',
-          function(){
-            $('#imgHinhQuangCao').attr('src', $('#sl-quang-cao').val())
-          }
-        );
+      socket.on('SERVER_CHANGE_AD', function(data){
+        $('#a-qc').attr('href', "http://" + data.link);
+        $('#img-qc').attr('src', data.image);
       });
     </script>
     <style media="screen">
@@ -22,14 +19,294 @@
     </style>
   </head>
   <body>
-    <select id="sl-quang-cao">
-      <option>--Chọn hình--</option>
-      <option value="1.jpg">Facebook</option>
-      <option value="2.png">Twitter</option>
-      <option value="3.jpg">Instagram</option>
-    </select>
-    <button id="btnSend">Gui</button>
+    <a id="a-qc"><img id="img-qc" width="100px"/></a>
     <hr/>
-    <img id="imgHinhQuangCao" width="200px"/>
+    <div id="left_calculator">
+        <div class="block_timer_share">
+            <div class="block_timer left txt_666">
+                Chủ nhật, 20/11/2016 | 05:47 GMT+7
+            </div>
+            <div class="block_share right">
+                <a class="btn_facebook" rel="nofollow" href="javascript:;" title="Chia sẻ bài viết lên facebook">
+                    <img alt="Chia sẻ bài viết lên facebook" src="http://st.f1.thethao.vnecdn.net/i/v2/graphics/icon_fb.gif">
+                </a>
+                <a class="btn_twitter" rel="nofollow" href="javascript:;" id="twitter" data-url="http://bit.ly/2gvFNUl" title="Chia sẻ bài viết lên twitter">
+                    <img alt="Chia sẻ bài viết lên twitter" src="http://st.f1.thethao.vnecdn.net/i/v2/graphics/icon_tw.gif">
+                </a>
+                <a class="btn_google" rel="nofollow" href="javascript:;" title="Chia sẻ bài viết lên google+">
+                    <img alt="Chia sẻ bài viết lên google+" src="http://st.f1.thethao.vnecdn.net/i/v2/graphics/icon_google.gif">
+                </a>
+                <span class="drash_share">|</span>
+                <a rel="nofollow" href="javascript:;" onclick="common.printContent();" title="Print"><img alt="Print" src="http://st.f1.thethao.vnecdn.net/i/v2/graphics/icon_print.gif"></a>
+                <a rel="nofollow" href="javascript:;" class="login_5" title="Email"><img alt="Email" src="http://st.f1.thethao.vnecdn.net/i/v2/graphics/icon_letter.gif"></a>
+            </div>
+        </div>
+        <div class="title_news">
+            <h1>
+                Ronaldo lập hat-trick, Real đại thắng Atletico
+            </h1>
+        </div>
+        <h3 class="short_intro txt_666">CR7 ghi cả ba bàn giúp Real Madrid giành chiến thắng 3-0 ngay trên sân Vicente Calderon của đối thủ cùng thành phố Atletico Madrid.
+        </h3>
+        <div class="relative_new">
+            <ul class="list_news_dot_3x3_300">
+                <li>
+                    <a
+                        alt="Vắng Messi và Suarez, Barca không thắng nổi Malaga"
+                        title="Vắng Messi và Suarez, Barca không thắng nổi Malaga"
+                        href="http://thethao.vnexpress.net/tin-tuc/la-liga/vang-messi-va-suarez-barca-khong-thang-noi-malaga-3501561.html?utm_source=detail&amp;utm_medium=box_relatedtop&amp;utm_campaign=boxtracking">Vắng Messi và Suarez, Barca không thắng nổi Malaga</a>
+                </li>
+            </ul>
+        </div>
+        <div class="fck_detail width_common block_ads_connect">
+            <div style="text-align:center;">
+                <div class="embed-container">
+                    <iframe
+                        class="parser_player_vnexpress"
+                        id="player_106546_0"
+                        width="480"
+                        height="270"
+                        src="http://video.vnexpress.net/parser.html?id=106546&amp;t=2&amp;ft=video&amp;si=1002565&amp;ap=0&amp;ishome=0&amp;player_id=106546_0"
+                        frameborder="0"
+                        allowfullscreen=""></iframe>
+                </div>
+            </div>
+            <p class="Normal">
+                <em>Bàn thắng: Ronaldo 23', 71' phạt đền, 77'</em>
+            </p>
+            <p class="Normal">
+                Gặp lại lần đầu tiên kể từ trận chung kết Champions League, Atletico chẳng những không đòi được món nợ thất bại mà còn vay thêm với tỷ số bất ngờ. Cristiano Ronaldo ghi cả ba bàn trong trận đấu từ một cú sút phạt trực tiếp, một quả phạt đền và một
+                pha đệm bóng.</p>
+            <p class="Normal">
+                Bên cạnh ý nghĩa ba điểm trong một trận derby Madrid, chiến thắng còn giúp Real tạo cách biệt lớn tại La Liga. Đội dẫn đầu hiện hơn đương kim vô địch Barca tới bốn điểm sau 12 vòng, đồng thời bỏ cách Atletico đến chín điểm. Đây là một ưu thế để Real
+                tiến tới chức vô địch quốc lần đầu tiên trong vòng năm năm.</p>
+            <table align="center" border="0" cellpadding="3" cellspacing="0" class="tplCaption" style="width: 100%;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <img alt="ronaldo-lap-hat-trick-real-dai-thang-atletico" data-natural-width="500" src="http://img.f1.thethao.vnecdn.net/2016/11/20/ronaldo-7740-1479595808.jpg" data-width="500" data-pwidth="470.40625" style="width: 100%;"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="Image">
+                                Ronaldo tỏa sáng đúng lúc giúp Real gia tăng cách biệt trên bảng điểm. Ảnh:
+                                <em>Reuters</em>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="Normal">
+                Trái với dự đoán của giới chuyên môn, Atletico thi đấu hoàn toàn kém đẳng cấp trong cuộc tái ngộ. Các cầu thủ của HLV Diego Simeone vừa tỏ ra nóng vội, thiếu chính xác, vừa không tạo được nhiều áp lực về phía khung thành Real. Trong khi đó, đội khách
+                giành được chiến thắng ba ưu điểm: xử lý bóng tốt hơn, sự bình tĩnh và khả năng tận dụng cơ hội vượt lên đúng lúc.</p>
+            <p class="Normal">
+                Xét về mặt cá nhân, cầu thủ nổi bật nhất không ai ngoài Ronaldo. Trong khi phải nhận không ít chỉ trích về phong độ thất thường từ đầu mùa, anh một lần nữa cho thấy khả năng quyết định trận đấu của một cầu thủ lớn. Ba bàn thắng không quá đẹp nhưng
+                đều đến ở những thời điểm mang tính then chốt. Trong đó, bàn mở tỷ số gần như là bước ngoặt của trận đấu.&nbsp;<span>Khi hai đội còn đang giằng co, CR7 tung sút phạt chạm hàng rào đổi hướng ở phút 23 khiến thủ môn Jan Oblak bó tay. Sau pha bóng này, Real thi đấu thêm tự tin và ung dung, trong khi Atletico xuống tinh thần thấy rõ.</span>
+            </p>
+            <p class="Normal">
+                <span>Nếu dứt điểm tốt hơn, Ronaldo có thể đã định đoạt chiến thắng ngay từ hiệp một. Anh bỏ lỡ cơ hội khi sút thẳng vào vị trí của thủ môn Oblak sau đường kiến tạo của Isco.</span>
+            </p>
+            <table align="center" border="0" cellpadding="3" cellspacing="0" class="tplCaption" style="width: 100%;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <img alt="ronaldo-lap-hat-trick-real-dai-thang-atletico-1" data-natural-width="500" src="http://img.f1.thethao.vnecdn.net/2016/11/20/rona-9804-1479598949.jpg" data-width="500" data-pwidth="470.40625" style="width: 100%;"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="Image">
+                                CĐV Atletico có mặt trên sân Vicente Calderon như chết lặng khi Ronaldo liên tục ghi bàn.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="Normal">
+                <span>Atletico bắt đầu hiệp hai với tinh thần tốt hơn nhưng cũng không làm được gì hơn so với 45 phút đầu. Carrasco và Griezmann có ba cơ hội dứt điểm và đều tỏ ra vô duyên trước khung thành Real.</span>
+            </p>
+            <p class="Normal">
+                <span>Khi CĐV sân Vicente Calderon tưởng như Atletico sắp gỡ hòa, Ronaldo một lần nữa là người cất tiếng nói quyết định. Anh kiếm được quả phạt đền từ pha tranh bóng với Savis ở phút 71, đồng thời đứng dậy sút chính xác nâng tỷ số lên 2-0. Sáu phút
+                    sau đó, tranh thủ thời cơ Atletico dâng lên quá cao, Gareth Bale dẫn bóng phản công rồi chuyền cho Ronaldo đệm bóng vào khung thành trống ấn định chiến thắng.</span>
+            </p>
+            <table align="center" border="0" cellpadding="3" cellspacing="0" class="tplCaption" style="width: 100%;">
+                <tbody>
+                    <tr>
+                        <td>
+                            <img alt="ronaldo-lap-hat-trick-real-dai-thang-atletico-2" data-natural-width="500" src="http://img.f1.thethao.vnecdn.net/2016/11/20/gri-6910-1479598949.jpg" data-width="500" data-pwidth="470.40625" style="width: 100%;"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="Image">
+                                Atletico của Griezmann tiếp tục chỉ là "đối thủ hạng hai" so với đội cùng thành phố&nbsp;Real Madrid.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="Normal">
+                Sau khi cầm chắc ba điểm, HLV Zindine Zidane mới thay ngôi sao sáng nhất trận bằng James Rodriguez ở phút 83. Atletico có một vài cơ hội gỡ bàn nhưng đều không thắng được thủ môn Keylor Navas.</p>
+            <p class="Normal">
+                Sau thảm bại trên sân nhà, Atletico dậm chân tại chỗ ở vị trí thứ năm với 21 điểm. Đội này có thể rơi xuống thứ sáu nếu Sociedad, đối thủ cạnh tranh đang có 19 điểm, thắng Gijon trong trận đấu tối Chủ nhật.</p>
+            <p class="Normal" style="text-align:right;">
+                <strong>Hiền Phương</strong>
+            </p>
+        </div>
+
+        <script type="text/javascript">
+            if (typeof(Parser) != "undefined") {
+                Parser.SITE_URL = "http://vnexpress.net";
+                Parser.URL = "http://st.f2.vnecdn.net/responsive/j/v24";
+                Parser.FLASH_URL = "http://st.f1.thethao.vnecdn.net/f/v1";
+                Parser.SITE_ID = 1002565;
+                Parser.AUTO_PLAY = 1;
+                Parser.parseAll();
+            }
+            if (device_env != 1 && typeof(common.resizeImageDetail) != 'undefined') {
+                common.resizeImageDetail();
+                $(window).resize(function() {
+                    common.delayFireOnce(1000).done(function() {
+                        common.resizeImageDetail();
+                    });
+                });
+            }
+        </script>
+        <div class="social_share width_common" id="social_like">
+            <div class="item_social" data-component="true" data-component-type="like" data-component-objectid="3501577" data-component-siteid="1002565" data-objecttype="1" style="display: block;">
+                <a class="btn_quantam" id="vne-like-anchor-1002565-3501577" href="#" total-like="45"></a>
+                <div class="number_count">
+                    <span id="like-total-1002565-3501577">45</span>
+                </div>
+            </div>
+            <div class="luu_baiviet right myvne_save_for_later" data-token="5dea8a39df5c858345cef38b646c4581" data-article-id="3501577">
+                <a title="Lưu" href="javascript:;">
+                    <span class="icon_savebaiviet"></span>
+                    <span>Lưu</span>
+                </a>
+            </div>
+            <div class="item_social social_fb hidden_320" style="overflow: visible;">
+                <div
+                    class="fb-like fb_iframe_widget"
+                    data-send="false"
+                    data-layout="button_count"
+                    data-width="450"
+                    data-show-faces="true"
+                    data-href="http://thethao.vnexpress.net/tin-tuc/la-liga/ronaldo-lap-hat-trick-real-dai-thang-atletico-3501577.html"
+                    fb-xfbml-state="rendered"
+                    fb-iframe-plugin-query="app_id=&amp;container_width=0&amp;href=http%3A%2F%2Fthethao.vnexpress.net%2Ftin-tuc%2Fla-liga%2Fronaldo-lap-hat-trick-real-dai-thang-atletico-3501577.html&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=true&amp;width=450">
+                    <span style="vertical-align: bottom; width: 78px; height: 20px;">
+                        <iframe
+                            name="fe1394c9d63adc"
+                            width="450px"
+                            height="1000px"
+                            frameborder="0"
+                            allowtransparency="true"
+                            allowfullscreen="true"
+                            scrolling="no"
+                            title="fb:like Facebook Social Plugin"
+                            src="https://www.facebook.com/plugins/like.php?app_id=&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FfTmIQU3LxvB.js%3Fversion%3D42%23cb%3Df11aeb7225a3708%26domain%3Dthethao.vnexpress.net%26origin%3Dhttp%253A%252F%252Fthethao.vnexpress.net%252Ffd3094a9704124%26relation%3Dparent.parent&amp;container_width=0&amp;href=http%3A%2F%2Fthethao.vnexpress.net%2Ftin-tuc%2Fla-liga%2Fronaldo-lap-hat-trick-real-dai-thang-atletico-3501577.html&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=true&amp;width=450"
+                            style="border: none; visibility: visible; width: 78px; height: 20px;"
+                            class=""></iframe>
+                    </span>
+                </div>
+            </div>
+            <div class="item_social social_twitter hidden_320">
+                <iframe
+                    id="twitter-widget-0"
+                    scrolling="no"
+                    frameborder="0"
+                    allowtransparency="true"
+                    class="twitter-share-button twitter-share-button-rendered twitter-tweet-button"
+                    title="Twitter Tweet Button"
+                    src="http://platform.twitter.com/widgets/tweet_button.f7908d4abf5ce27173c69bdbb93aedb6.en.html#dnt=false&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fthethao.vnexpress.net%2Ftin-tuc%2Fla-liga%2Fronaldo-lap-hat-trick-real-dai-thang-atletico-3501577.html&amp;size=m&amp;text=Ronaldo%20l%E1%BA%ADp%20hat-trick%2C%20Real%20%C4%91%E1%BA%A1i%20th%E1%BA%AFng%20Atletico%20-%20VnExpress%20Th%E1%BB%83%20Thao&amp;time=1479609931700&amp;type=share&amp;url=http%3A%2F%2Fbit.ly%2F2gvFNUl"
+                    style="position: static; visibility: visible; width: 60px; height: 20px;"
+                    data-url="http://bit.ly/2gvFNUl"></iframe>
+            </div>
+            <div class="item_social social_plus hidden_320">
+                <div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;">
+                    <iframe
+                        frameborder="0"
+                        hspace="0"
+                        marginheight="0"
+                        marginwidth="0"
+                        scrolling="no"
+                        style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;"
+                        tabindex="0"
+                        vspace="0"
+                        width="100%"
+                        id="I0_1479609930595"
+                        name="I0_1479609930595"
+                        src="https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi=1&amp;size=medium&amp;hl=vi&amp;origin=http%3A%2F%2Fthethao.vnexpress.net&amp;url=http%3A%2F%2Fthethao.vnexpress.net%2Ftin-tuc%2Fla-liga%2Fronaldo-lap-hat-trick-real-dai-thang-atletico-3501577.html&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.vi.Tb-e9HmKKYU.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCO0e4UR1kH4EvoieC59phhiUMsKxQ#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&amp;id=I0_1479609930595&amp;parent=http%3A%2F%2Fthethao.vnexpress.net&amp;pfname=&amp;rpctoken=31266212"
+                        data-gapiattached="true"
+                        title="+1"></iframe>
+                </div>
+            </div>
+        </div>
+        <div id="box_tinlienquan" class="ab_recommend_2 width_common mg_bottom_20 box_recommend_style1 ">
+            <div class="title_box_category style_02">
+                <div class="txt_main_category">
+                    <a>Tin liên quan</a>
+                </div>
+            </div>
+            <div class="content_box_category width_common">
+                <div class="box_list_recommend width_common">
+                    <ul class="list_news_recommend">
+                        <li>
+                            <div class="thumb width_common">
+                                <a
+                                    href="http://thethao.vnexpress.net/tin-tuc/la-liga/ronaldo-tit-ngoi-real-bi-cam-chan-tran-thu-hai-lien-tiep-3473750.html?utm_source=detail&amp;utm_medium=box_recommend&amp;utm_campaign=boxtracking"
+                                    title="Ronaldo tịt ngòi, Real bị cầm chân trận thứ hai liên tiếp">
+                                    <img src="http://img.f2.thethao.vnecdn.net/2016/09/25/cr-9388-1474753107_122x122.jpg" alt="Ronaldo tịt ngòi, Real bị cầm chân trận thứ hai liên tiếp">
+                                </a>
+                            </div>
+                            <div class="title_news">
+                                <a
+                                    class="txt_link"
+                                    href="http://thethao.vnexpress.net/tin-tuc/la-liga/ronaldo-tit-ngoi-real-bi-cam-chan-tran-thu-hai-lien-tiep-3473750.html?utm_source=detail&amp;utm_medium=box_recommend&amp;utm_campaign=boxtracking"
+                                    title="Ronaldo tịt ngòi, Real bị cầm chân trận thứ hai liên tiếp">Ronaldo tịt ngòi, Real bị cầm chân trận thứ hai liên tiếp</a>
+                                <span class="txt_666">(25/9/2016)</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="thumb width_common">
+                                <a
+                                    href="http://thethao.vnexpress.net/tin-tuc/champions-league/real-hoa-tran-thu-ba-lien-tiep-du-ronaldo-ghi-ban-3475200.html?utm_source=detail&amp;utm_medium=box_recommend&amp;utm_campaign=boxtracking"
+                                    title="Real hòa trận thứ ba liên tiếp, dù Ronaldo ghi bàn">
+                                    <img src="http://img.f1.thethao.vnecdn.net/2016/09/28/varane-7082-1475009516_122x122.jpg" alt="Real hòa trận thứ ba liên tiếp, dù Ronaldo ghi bàn">
+                                </a>
+                            </div>
+                            <div class="title_news">
+                                <a
+                                    class="txt_link"
+                                    href="http://thethao.vnexpress.net/tin-tuc/champions-league/real-hoa-tran-thu-ba-lien-tiep-du-ronaldo-ghi-ban-3475200.html?utm_source=detail&amp;utm_medium=box_recommend&amp;utm_campaign=boxtracking"
+                                    title="Real hòa trận thứ ba liên tiếp, dù Ronaldo ghi bàn">Real hòa trận thứ ba liên tiếp, dù Ronaldo ghi bàn</a>
+                                <span class="txt_666">(28/9/2016)</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="thumb width_common">
+                                <a href="http://thethao.vnexpress.net/tin-tuc/tuong-thuat/ronaldo-lap-hat-trick-giai-cuu-real-3491232.html?utm_source=detail&amp;utm_medium=box_recommend&amp;utm_campaign=boxtracking" title="Ronaldo lập hat-trick, giải cứu Real">
+                                    <img src="http://img.f3.thethao.vnecdn.net/2016/10/29/cr-1477759481_122x122.jpg" alt="Ronaldo lập hat-trick, giải cứu Real">
+                                </a>
+                            </div>
+                            <div class="title_news">
+                                <a class="txt_link" href="http://thethao.vnexpress.net/tin-tuc/tuong-thuat/ronaldo-lap-hat-trick-giai-cuu-real-3491232.html?utm_source=detail&amp;utm_medium=box_recommend&amp;utm_campaign=boxtracking" title="Ronaldo lập hat-trick, giải cứu Real">Ronaldo lập hat-trick, giải cứu Real</a>
+                                <span class="txt_666">(29/10/2016)</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="thumb width_common">
+                                <a href="http://thethao.vnexpress.net/tin-tuc/la-liga/ronaldo-cai-thien-kha-nang-kien-tao-3487498.html?utm_source=detail&amp;utm_medium=box_recommend&amp;utm_campaign=boxtracking" title="Ronaldo cải thiện khả năng kiến tạo">
+                                    <img src="http://img.f1.thethao.vnecdn.net/2016/10/22/ronaldo-9852-1477096787_122x122.jpg" alt="Ronaldo cải thiện khả năng kiến tạo">
+                                </a>
+                            </div>
+                            <div class="title_news">
+                                <a class="txt_link" href="http://thethao.vnexpress.net/tin-tuc/la-liga/ronaldo-cai-thien-kha-nang-kien-tao-3487498.html?utm_source=detail&amp;utm_medium=box_recommend&amp;utm_campaign=boxtracking" title="Ronaldo cải thiện khả năng kiến tạo">Ronaldo cải thiện khả năng kiến tạo</a>
+                                <span class="txt_666">(22/10/2016)</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="clear">&nbsp;</div>
+    </div>
   </body>
 </html>
