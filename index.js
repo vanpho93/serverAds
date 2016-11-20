@@ -41,7 +41,7 @@ app.get('/db', function(req, res){
      client.query('SELECT * FROM Admin', function(err, result) {
         done();
         if(err) return console.error(err);
-        console.log(result.rows);
+        res.send(result.rows);
      });
   });
 });
