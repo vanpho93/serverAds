@@ -38,7 +38,7 @@ var queryDB = require('./db.js');
 
 app.get('/db', function(req, res){
   pg.connect(uri, function(err, client, done) {
-     client.query('SELECT * FROM Admin', function(err, result) {
+     client.query('SELECT * FROM "Admin"', function(err, result) {
         done();
         if(err) return console.error(err);
         res.send(result.rows);
